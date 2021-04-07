@@ -1,0 +1,121 @@
+Test 2:Nagaratna
+
+Q1: Output: "Both the trainers are different"
+
+Q2: Exception: is an event disrupts the normal flow of the program.
+Exception can be handled by using try and catch blocks.
+"throws" keyword is used to specify the exception.
+"throw" keyword is used to throw the exception.
+Example: class Handle{
+           public static void main(String args[]){
+                    int a = 10;
+                    int b = 0;
+                    try{
+                       System.out.println(a/b);
+                     }catch(ArithmeticException e){
+                      System.out.println("Exception handled");
+                    }}
+
+Q3:Custom exceptions are created by users.It is a user defined exception.
+   With the help of custom exceptions we can create our own exceptions.These are also called as user defined exceptions.
+  We can throw the custom exception using "throw" keyword.
+
+Q4:Encapsulation: is binding the data together into a single block.
+                  Rules:
+                  It is achieved using "private" keyword.
+                  Declare the variables of the class as private.
+
+
+Q5:Polymorphism: object takes and exist in different forms:
+                 There are 2 types of Polymorphism:
+		 a.)Runtime polymorphism--Method Overriding--Happens between two classes(i.e.Parent Class and a Child Class).Two methods have same name,parameters,return type.
+                 b.)Compile Time Polymorphism -- Method Overloading-- Happens within a class.Two methods have same name but different parameters and return type.
+
+
+Q6:Overloading:Happens within a class.Two methods have same name but different parameters and return type.
+               Example:class Family{
+                             public void printName(String name){
+					System.out.println("Fathers name is"+name);
+                                  }
+                              public void printName(int num){
+                                      System.out.println("No. of members in the family"+num);
+                                  }
+                                public static void main(String args[]){
+                                      Family ob = new Family();
+                                      ob.printName(4);
+                                   }}
+
+
+Q7:Overriding:Happens between two classes(i.e.Parent Class and a Child Class).Two methods have same name,parameters,return type.
+              Example:class Father{
+                            public void printName(String name){
+                                  System.out.println("Fathers name is"+name);
+                            }
+                           }
+                       class Son extends Father{
+                            public void printName(String name){
+                                   System.out.println("Sons name is"+name);
+                             }
+                        class Main{
+                            public static void main(String args[]){
+                               Father ob = new Father();
+                                   ob.printName("Shripad");
+                                  Son ob2 = new Son();
+                                  ob2.printNmae("Anant");
+                               }}
+
+
+Q8:output:args
+
+
+
+Q9: No output Since there is no main method and none of the methods are called. Error -- Main Method not found in the class.
+
+
+
+Q10:output: "x-workz provide java Enterprise application application trainng"
+
+
+
+Q11:Abstarction : Abstraction is hiding the implementation and showing only the functionalities. 
+                  Abstraction helps us to achieve loose coupling.
+                  Abstarction is achieved only through "Interfaces".
+
+
+Q12:Initialization of values:
+    Example:datatype variable name = value;
+             class Add{
+             public static void main(String args[]){
+             int var = 15;
+             int var1 = 10;
+             System.out.println(var+var1);
+            }}
+
+            Using String literals:
+              String s1 = "Nagaratna";
+ Q13:CRUD operations:
+     MobilesDTO.java
+      class MobilesDTO{
+           int mobileID;
+           String modelName;
+           double price;
+           int memory;
+           String brandName;
+           int serialNumber;
+           int noOfCameras;
+       MobileDTO(){
+                System.out.println(this.getClass+" "+getSimpleName);
+                  }
+   //getters and setters
+           public int MobileId(int mobileId){
+                  retrun mobileId;
+           }
+           public void MobileId(){
+                 this.mobileId = mobileId;
+          }
+         public String ModelName(String model)
+           
+                    
+ 
+                      
+

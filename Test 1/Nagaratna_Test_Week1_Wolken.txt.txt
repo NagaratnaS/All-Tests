@@ -1,0 +1,125 @@
+﻿1.)What is an Object?
+-> An object is an instance of a class.
+
+
+2.)What is a Class?
+->A class is a blueprint for objects.
+
+
+3.)What is variables? why we use variables?
+-> Variables are containers to hold different types of data.
+
+
+4.)What are instance variables?
+Instance variables are declared inside the class but outside the method without the static keyword.
+
+
+5.)What is a static variable?
+Static variables are class variables which are declared inside the class but outside the method “with the static keyword”.
+
+
+6.)What is the difference between class variable and instance variable?
+->Class variables are static variables . Class variables are declared with the static keyword in a class but outside the method.
+->Instance variables are declared inside the class outside the function . Instance variables are initialized by the constructor.
+
+
+7.)How will you create an object? with example?
+->We create the object with the “new” keyword. Example: Classname objectname = new Classname() ; HallTicket ob = new HallTicket();
+
+
+8.)What is a method?
+->A method is block of code to “execute a specific task”.
+what is method overloading?  
+
+
+9.)Practical
+method overloading
+print month of year
+factorial 
+
+
+1.Method Overloading:
+class A {
+
+
+    A() {
+
+
+    }
+    public void calc(int a, int b) {
+        System.out.println(a+b);
+    }
+}
+
+
+class B extends A {
+    B() {
+        super();
+    }
+
+
+    public void calc(int a, int b, int c) {
+        System.out.println(a+b+c);
+    }
+}
+
+
+class methodOverLoading {
+    public static void main(String args[]) {
+        A a = new A();
+        a.calc(2,3);
+        B b = new B();
+        b.calc(2,3,4);
+    }
+}
+
+
+
+
+2.Print month of a year:
+
+
+import java.time.*;
+
+
+class monthOfYear {
+    public static void main(String args[]) {
+        String date = "2020-08-01";
+
+
+        LocalDate curr = LocalDate.parse(date);
+
+
+        Month month = curr.getMonth();
+
+
+        System.out.println(month);
+    }
+}
+
+
+3.Factorial of a number:
+
+
+import java.util.*;
+class factorial {
+    public static int fact(int i) {
+        if (i == 1)
+         return 1;
+        else
+         return i * fact(i-1);
+    }
+
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number");
+        int num = sc.nextInt();
+
+
+        if (num < 0)
+         System.out.println("num should be > 0\n");
+        else
+         System.out.println("Factorial is : " + fact(num));
+    }
+}

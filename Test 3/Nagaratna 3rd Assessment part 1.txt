@@ -1,0 +1,114 @@
+Nagaratna 
+
+1. DB means databse. We use database to store the data.
+
+
+2. DBMS means database management system. RDBMS means relational database management system.
+   DBMS: 
+    -> data is not stored in the form of table.
+   RDBMS: 
+    -> data is stored in the form of table i.e rows and columns.
+
+
+3. SQL is structured query language , it is a type of RDBMS. Using SQL we can create update delete
+   retrieve the data and can group the data which belongs to same entity as a table. For example we
+    can make a table for user, state and can create a relationship between these two.
+
+
+4. JDBC - Java to Database Connectivity - JDBC is used to connect a database to a Java program.
+steps:
+a.)Load and register the driver.
+b.)Establish the connection with the DB server.(getConnection())
+c.)Create a statement or a platform. (Statement statement = conn.createStatement())
+d.)Execute the query done with the help of ResultSet.
+e.)Close all the connections
+
+
+5. OOPS is object oriented programming system where we create classes, and to access the data and methods
+   of that class we create object for that class.
+   Fundamental concepts of oops:
+   -> Encapsulation: It is a technique where we wrap the data and methods acting together as a single
+       unit. Example : 
+	DTO : data transfer object. Here the variables are declared as private and to get the value of variables
+	      we use getter, to set the value for variables we use setters.
+   -> Polymorphism: Where an object takes and exist in different forms
+	types: Run-time-polymorphism: generic servlets overrides the service method.
+	       Compile-time-polymorphism
+   -> Inheritance: One class acquires the properties of other class. i.e, the inherited class can 
+		   access the variables and methods of the parent class.
+		Example: All the classes in Java extends the Object class by default.
+   -> Abstraction: Hiding the implementation and showing only the functionalities to achieve the
+ 		   loose coupling. 100% abstraction can be achieved only through interfaces.
+		Example: We uses only the funcationalities of the bike while we don't know how it actually
+			 works internally. i.e, we use ABS in bike but we don't know how ABS works internally.
+
+
+6. Compile-time-polymorphism:
+    -> method-overloading: two methods reside in the same class and have the same name but either have different
+			   parameters or different return types or different types of parameters.
+   Run-time-polymorphism: two methods reside in parent and inherited classes and will have same name same return type
+			  and same type of parameters. The decision will be made while run time.
+
+
+7. Constructor: Which is a special method and will have same name as class and don't have any return type and will be called
+		when the object of the class is created. Constructor is used to initialize the instance variables.
+	types:
+	 -> default constructor: which doesn't have any paremeters.
+	 -> parameterized constructor: which will take the paremeters.
+
+	Constructor chaining: Calling one constructor from another constructor.
+
+
+8. MySQL is a database server which follows relational database management system (RDBMS).
+   It allows to create,delete,update and retrieve the data which will be stored in the form of table and also we can create
+   relationship between tables.
+
+
+9. create table movie_details(
+	id int primary key not null,
+	title varchar(15),
+	category varchar(25),
+	language varchar(15)
+);
+
+  create table movie_member(
+	id int primary key not null,
+	firstname varchar(20),
+	lastname varchar(20),
+	movie_id int,
+	age int,
+	foreign key(movie_id) references movie_details(id) 
+);
+
+10. insert into movie_details(id,title,category,language) values(1,"KGF","Action","Kannada"),
+    (2, "Safe House(2012)", "Action","English"),
+    (3, "Dil Bechara","Romance", "Hindi"),
+    (4, "3 idiots","comedy-drama", "Hindi"),
+    (5, "Vikram Vedha", "action thriller", "Tamil"),
+    (6, "Chhello Divas", "comedy","Gujarati"),
+    (7, "Real Steel(2012)", "Animations", "English"),
+    (8, "Safe (2012)", "Action", "English");
+
+    insert into movie_member(id,first_name,last_name,movie_id,age) values(1, "Adam","Smith",1, 20),
+    (2,"Ravi","Kumar",2,19),
+    (3,"Susan","Davidson",5,17),
+    (4,"Jenny","Adrianna",8,21),
+    (6,"Lee","Pong",4,18),
+    (7,"Rakesh","Kanna",3,25),
+    (9,"Pravin","Rathod",5,22),
+    (8,"Vishal","Hatti",6,25),
+    (10, "Rohan","Patil",1,23);
+
+11. select * from movie_details left join movie_member on movie_details .movie_id = movie_member.id;
+
+12. select * from movie_details right join movie_member on movie_details .movie_id = movie_member.id;
+
+13. select * from movie_member inner join movie_details on movie_member.id = movie_details.movie_id and movie_details.movie_name="3 idiots";
+
+14. select * from movie_member inner join movie_details on movie_member.id = movie_details.movie_id and movie_details.movie_name="3 idiots";
+
+15. select * from movie_member inner join movie_details on movie_member.id = movie_details.movie_id;
+
+16. select * from movie_details right join movie_member on movie_details .movie_id = movie_member.id;
+
+17. select * from (select distinct * from movie_details ) md full outer join (select distinct * from movie_member) mm on md.id = mm.movie_id;
